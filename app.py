@@ -1,34 +1,19 @@
-import os, requests, streamlit as st
-import torch
+import os, streamlit as st, torch, gdown
 from torchvision import transforms
 from PIL import Image
 from TumorModel import TumorClassification, GliomaStageModel
 
-# ── Helpers to download from Google Drive ─────────────────────────────────────
-def download_from_gdrive(file_id, dest):
-    if os.path.exists(dest):
-        return
-    URL = "https://drive.google.com/uc?export=download"
-    session = requests.Session()
-    r = session.get(URL, params={'id': file_id}, stream=True)
-    for k, v in r.cookies.items():
-        if k.startswith('download_warning'):
-            r = session.get(URL, params={'id': file_id, 'confirm': v}, stream=True)
-            break
-    with open(dest, 'wb') as f:
-        for chunk in r.iter_content(32768):
-            if chunk:
-                f.write(chunk)
+# ── 1. Download models with gdown ─────────────────────────────────────────────
+TUMOR_URL = "https://drive.google.com/uc?id=1juQk4AhIi7u7I41uttCUpJYsvtsPyZUy"
+STAGE_URL = "https://drive.google.com/uc?id=19MrhHVQbSlVmaV-bP_FIpcY5t9wjKMSX"
 
-# ── Your Google Drive File IDs ────────────────────────────────────────────────
-TUMOR_ID = "1juQk4AhIi7u7I41uttCUpJYsvtsPyZUy"      # BTD_model.pth
-STAGE_ID = "19MrhHVQbSlVmaV-bP_FIpcY5t9wjKMSX"      # glioma_stages.pth
+if not os.path.exists("BTD_model.pth"):
+    gdown.download(TUMOR_URL, "BTD_model.pth", quiet=False)
 
-# ── Download models once ───────────────────────────────────────────────────────
-download_from_gdrive(TUMOR_ID, "BTD_model.pth")
-download_from_gdrive(STAGE_ID, "glioma_stages.pth")
+if not os.path.exists("glioma_stages.pth"):
+    gdown.download(STAGE_URL, "glioma_stages.pth", quiet=False)
 
-# ── Load models into memory ────────────────────────────────────────────────────
+# ── 2. Load models (cached) ───────────────────────────────────────────────────
 @st.cache_resource
 def load_models():
     tm = TumorClassification()
@@ -40,7 +25,7 @@ def load_models():
 
 tumor_model, glioma_model = load_models()
 
-# ── Labels & Preprocessing ────────────────────────────────────────────────────
+# ── 3. Labels & Preprocessing ─────────────────────────────────────────────────
 tumor_labels = ['glioma','meningioma','notumor','pituitary']
 stage_labels = ['Stage 1','Stage 2','Stage 3','Stage 4']
 
@@ -51,7 +36,7 @@ transform = transforms.Compose([
     transforms.Normalize([0.5],[0.5])
 ])
 
-# ── Build Streamlit UI ────────────────────────────────────────────────────────
+# ── 4. Streamlit UI ───────────────────────────────────────────────────────────
 st.set_page_config(page_title="Brain Tumor Predictor", layout="centered")
 st.title("🧠 Brain Tumor Detector & Glioma Stage Predictor")
 
