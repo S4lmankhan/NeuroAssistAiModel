@@ -28,7 +28,7 @@ Built in **PyTorch**, presented via **Streamlit**, and embeddable in any site (e
 
 ## 🔄 End‑to‑End Pipeline
 
-```mermaid
+```
 flowchart LR
     A[🖼️ Upload MRI Image] --> B[🧠 Streamlit UI: Tumor Detection]
     B --> C[CNN Model → Tumor Type]
@@ -38,12 +38,10 @@ flowchart LR
     F --> G[ANN Model → Stage I–IV]
     G --> H[📤 Display Stage]
 
-    subgraph “Live Deployments”
+    subgraph "Live Deployments"
       I[Streamlit Cloud] & J[Vercel Site]
     end
     D & H --> I & J
-````
-
 ---
 
 ## 🎯 Why NeuroAssistAI?
