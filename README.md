@@ -223,9 +223,19 @@ This project is licensed under **MIT**. See [LICENSE](LICENSE) for details.
 
 ---
 
-## Contact
+## 📬 Contact
 
-**Salman Khan**
-📧 [redhawk112233@gmail.com](mailto:redhawk112233@gmail.com)
-🔗 [GitHub @s4lmankhan](https://github.com/S4lmankhan)
+Feel free to reach out or connect with me:
+
+- 📸 [Instagram](https://www.instagram.com/codewithsalty/)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/s4lmankhan/)  
+- 🐙 [GitHub](https://github.com/S4lmankhan)  
+- 📧 [Email Me](mailto:codewithsalty@gmail.com)
+
+## 📬 Contact
+
+[📸 Instagram](https://www.instagram.com/codewithsalty/) &nbsp;|&nbsp;  
+[💼 LinkedIn](https://www.linkedin.com/in/s4lmankhan/) &nbsp;|&nbsp;  
+[🐙 GitHub](https://github.com/S4lmankhan) &nbsp;|&nbsp;  
+[📧 Email](mailto:codewithsalty@gmail.com)
 
