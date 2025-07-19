@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="images/banner.png" alt="NeuroAssistAI" width="800"/>
-</p>
-
 # 🧠 NeuroAssistAIModel
 
 **Advanced Brain Tumor Detection & Glioma Stage Prediction**  
