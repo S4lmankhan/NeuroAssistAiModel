@@ -1,8 +1,8 @@
 # 🧠 NeuroAssist AI
 
-**Advanced Brain Tumor Detection & Glioma Stage Prediction**  
+**Advanced Brain Tumor Detection & Glioma Stages Prediction**  
 
-🚀 **[Main Site (Vercel Deployment)](https://neuroassistai.vercel.app/)**  
+🚀 **[👉Main Site](https://neuroassistai.vercel.app/)**  
 🌐 **[Try it on Streamlit](https://neuroassist.streamlit.app/)**
 
 ---
@@ -232,10 +232,4 @@ Feel free to reach out or connect with me:
 - 🐙 [GitHub](https://github.com/S4lmankhan)  
 - 📧 [Email Me](mailto:codewithsalty@gmail.com)
 
-## 📬 Contact
-
-[📸 Instagram](https://www.instagram.com/codewithsalty/) &nbsp;|&nbsp;  
-[💼 LinkedIn](https://www.linkedin.com/in/s4lmankhan/) &nbsp;|&nbsp;  
-[🐙 GitHub](https://github.com/S4lmankhan) &nbsp;|&nbsp;  
-[📧 Email](mailto:codewithsalty@gmail.com)
 
