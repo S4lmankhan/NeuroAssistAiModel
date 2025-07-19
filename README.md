@@ -1,3 +1,4 @@
+````markdown
 <p align="center">
   <img src="images/banner.png" alt="NeuroAssistAI" width="800"/>
 </p>
@@ -28,7 +29,7 @@ Built in **PyTorch**, presented via **Streamlit**, and embeddable in any site (e
 
 ## 🔄 End‑to‑End Pipeline
 
-```
+```mermaid
 flowchart LR
     A[🖼️ Upload MRI Image] --> B[🧠 Streamlit UI: Tumor Detection]
     B --> C[CNN Model → Tumor Type]
@@ -42,6 +43,8 @@ flowchart LR
       I[Streamlit Cloud] & J[Vercel Site]
     end
     D & H --> I & J
+````
+
 ---
 
 ## 🎯 Why NeuroAssistAI?
@@ -135,12 +138,12 @@ NeuroAssistAIModel/
 ├── models/
 │   ├── TumorModel.py         # CNN & ANN definitions
 │   └── (downloaded .pth files)
-├── utils.py                  # Precaution & input helpers
+├── utils.py                  # Helper functions
 ├── requirements.txt
 ├── images/                   # UI assets & screenshots
 │   └── banner.png
 ├── assets/
-│   └── pipeline_flow.png     # Flowchart graphic
+│   └── pipeline_flow.png     # Flowchart graphic (used above)
 └── README.md                 # ← You are here
 ```
 
@@ -212,9 +215,3 @@ This project is licensed under **MIT**. See [LICENSE](LICENSE) for details.
 **Salman Khan**
 📧 [redhawk112233@gmail.com](mailto:redhawk112233@gmail.com)
 🔗 [GitHub @s4lmankhan](https://github.com/S4lmankhan)
-
----
-
-```
-::contentReference[oaicite:0]{index=0}
-```
