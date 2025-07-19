@@ -1,4 +1,3 @@
-````markdown
 <p align="center">
   <img src="images/banner.png" alt="NeuroAssistAI" width="800"/>
 </p>
