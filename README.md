@@ -1,167 +1,206 @@
-<!-- Banner -->
-<p align="center">
-  <img src="images/banner.png" alt="NeuroAssistAI" width="800"/>
-</p>
+# 🧠 NeuroAssistAIModel
 
-<h1 align="center">🔬 NeuroAssistAIModel</h1>
-<p align="center">
-  **Advanced Brain Tumor Detection & Glioma Stage Prediction**  
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"/></a>
-  <a href="https://streamlit.io/cloud"><img src="https://img.shields.io/badge/Live%20Demo-Streamlit-red.svg" alt="Streamlit Demo"/></a>
-  <a href="https://github.com/S4lmankhan/NeuroAssistAiModel/actions"><img src="https://img.shields.io/github/actions/workflow/status/S4lmankhan/NeuroAssistAiModel/ci.yml?branch=main&label=CI&style=flat-square" alt="CI Status"/></a>
-</p>
+**Advanced Brain Tumor Detection & Glioma Stage Prediction – now in Streamlit!**
+
+[🔗 **Live Demo** (Streamlit)](https://s4lmankhan-neuroassistaimodel.streamlit.app)
 
 ---
 
-## 📖 Table of Contents
-1. [🤔 Why NeuroAssistAI?](#🤔-why-neuroassistai)  
-2. [🎨 Highlights](#🎨-highlights)  
-3. [⚙️ Architecture](#⚙️-architecture)  
-4. [💾 Installation](#💾-installation)  
-5. [🚀 Quickstart](#🚀-quickstart)  
-6. [📂 Download Models](#📂-download-models)  
-7. [📦 Deployment](#📦-deployment)  
-8. [🛠 Troubleshooting](#🛠-troubleshooting)  
-9. [🤝 Contributing](#🤝-contributing)  
-10. [📝 License](#📝-license)  
+## 📌 Overview
+
+NeuroAssistAIModel is a two-stage, PyTorch-powered pipeline that automates:
+
+1. **Brain Tumor Detection** from grayscale MRI images via a custom CNN.  
+2. **Glioma Stage Prediction** using patient gene mutation data through an ANN.
+
+Powered by real clinical approaches, this tool supports radiologists and neurologists in early, accurate diagnostics.
 
 ---
 
-## 🤔 Why NeuroAssistAI?
+## 🧪 Live Testing
 
-- **Precision Diagnosis**: Leverages CNN and MLP architectures for accurate, automated brain tumor analysis.  
-- **End‑to‑End Pipeline**: From MRI image upload to gene‑mutation form, all in one unified interface.  
-- **Instant Deployment**: Models auto‑download from Google Drive; no large files in GitHub.  
-- **Embeddable UI**: Integrate via `<iframe>` into any web portal (e.g. V0 Agent).
+✔️ Upload a brain MRI to classify tumor type.  
+✔️ Provide gene mutation details to predict glioma stage.
 
----
-
-## 🎨 Highlights
-
-<p align="center">
-  <img src="images/demo_screenshot.png" alt="Demo Screenshot" width="80%"/>
-</p>
-
-- **Dual Tabs**: Separate workflows for **Tumor Detection** and **Glioma Staging**.  
-- **Responsive Design**: Fits desktop & mobile.  
-- **Graphical Feedback**: Sidebar logs missing/unexpected keys for quick debugging.
+[🌐 Launch Live App →](https://s4lmankhan-neuroassistaimodel.streamlit.app)
 
 ---
 
-## ⚙️ Architecture
+## 📚 Research Basis
 
-```mermaid
-flowchart LR
-  A[Upload MRI] --> B[Streamlit UI]
-  B --> C[CNN Model: TumorClassification]
-  C --> D[Tumor Type]
-  E[Enter Genetic Info] --> B
-  B --> F[MLP Model: GliomaStageModel]
-  F --> G[Glioma Stage]
-  D & G --> H[Results Display]
+Inspired by state-of-the-art research in brain tumor analysis and glioma classification. Designed and implemented from scratch in PyTorch and Streamlit.
+
+---
+
+## 📂 Dataset
+
+- **Source:** Brain Tumor MRI Dataset (e.g., Kaggle)  
+- **Classes:** Glioma, Meningioma, Pituitary, No Tumor  
+- **Format:** Grayscale .jpg grouped by class
+
+---
+
+## 🧠 Model Architectures
+
+### 🔷 CNN – Tumor Type Detection
+- **Input:** Grayscale MRI image (224×224)
+- **Layers:** 3×(Conv2D + ReLU + Pooling) → Dense → Output (4 classes)
+- **Framework:** PyTorch CNN
+- **Training:** From scratch on MRI image dataset  
+
+### 🟢 ANN – Glioma Stage Classification
+- **Input:** Numeric mutation data (9 features)
+- **Layers:** Dense → Dense → Dense → Output (4 stages)
+- **Framework:** PyTorch MLP  
+- **Training:** Tailored to mutation-feature input
+
+---
+
+## 💾 Model Files
+
+| File                        | Description                              | Storage Location             |
+|-----------------------------|------------------------------------------|------------------------------|
+| `BTD_model.pth`            | Brain Tumor Classification Model         | **Download via Google Drive** |
+| `glioma_stages.pth`       | Glioma Stage Classification Model        | Included in `models/` folder |
+
+> 🚧 **Note:** `BTD_model.pth` exceeds GitHub’s 100MB limit and must be downloaded separately.
+
+### 🔄 Auto-Download Script
+
+Included in `app.py`, models are auto-fetched at first launch:
+```python
+# inside load_models()
+gdown.download(BTD_MODEL_URL, "models/BTD_model.pth", quiet=True)
 ````
 
 ---
 
-## 💾 Installation
+## ⚙️ Tech Stack
 
-1. **Clone**
+* **Language:** Python 3.10+
+* **Frameworks:** PyTorch, Streamlit
+* **Utils:** torchvision, pillow, gdown
+* **Deployment:** Streamlit Community Cloud, Google Drive
+
+---
+
+## 📁 Folder Structure
+
+```
+NeuroAssistAiModel/
+├── app.py               # Streamlit UI + model loading logic
+├── models/              # Contains models and architecture definition
+│   └── TumorModel.py    # CNN + ANN definitions
+├── requirements.txt     # Project dependencies
+├── .gitignore
+├── images/              # Screenshots, banner, diagrams
+└── README.md            # This documentation
+```
+
+---
+
+## 🚀 Run Locally
+
+1. **Clone Repo**
 
    ```bash
    git clone https://github.com/S4lmankhan/NeuroAssistAiModel.git
    cd NeuroAssistAiModel
    ```
-2. **Environment**
+
+2. **Virtual Environment**
 
    ```bash
    python3 -m venv .venv
-   source .venv/bin/activate    # macOS/Linux
-   .venv\Scripts\activate       # Windows
+   source .venv/bin/activate   # Mac/Linux
+   .venv\Scripts\activate      # Windows
    ```
-3. **Dependencies**
+
+3. **Install Dependencies**
 
    ```bash
    pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
----
+4. **Start App**
 
-## 🚀 Quickstart
-
-```bash
-streamlit run app.py
-```
-
-* **Tab 1**: Upload an MRI → Predict tumor type
-* **Tab 2**: Fill mutation sliders → Predict glioma stage
+   ```bash
+   streamlit run app.py
+   ```
 
 ---
 
-## 📂 Download Models
+## 🔗 Embed in Your Site
 
-Models are auto‑downloaded via `gdown`, but you can grab them manually:
-
-| Model                                      | Link                                                                                                                                              |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **TumorClassification** (`BTD_model.pth`)  | [https://drive.google.com/file/d/1juQk4AhIi7u7I41uttCUpJYsvtsPyZUy/view](https://drive.google.com/file/d/1juQk4AhIi7u7I41uttCUpJYsvtsPyZUy/view)  |
-| **GliomaStageModel** (`glioma_stages.pth`) | [https://drive.google.com/file/d/19MrhHVQbSlVmaV-bP\_FIpcY5t9wjKMSX/view](https://drive.google.com/file/d/19MrhHVQbSlVmaV-bP_FIpcY5t9wjKMSX/view) |
-
-Place these in a `models/` folder if you prefer offline use.
-
----
-
-## 📦 Deployment
-
-### Streamlit Community Cloud
-
-1. Push to **GitHub** (`main` branch).
-2. On [Streamlit Cloud](https://streamlit.io/cloud), click **New App**.
-3. Select **NeuroAssistAiModel**, branch `main`, entry `app.py`.
-
-> **Live Demo:**
-> [https://s4lmankhan-neuroassistaiModel.streamlit.app](https://s4lmankhan-neuroassistaiModel.streamlit.app)
-
-### Embedding via `<iframe>`
+Add this to your webpage:
 
 ```html
 <iframe
-  src="https://s4lmankhan-neuroassistaiModel.streamlit.app"
-  width="100%" height="800" frameborder="0" 
-  aria-label="NeuroAssistAI App">
+  src="https://s4lmankhan-neuroassistaimodel.streamlit.app"
+  width="100%" height="800" frameborder="0"
+  aria-label="Brain Tumor Detector & Glioma Stage Predictor">
 </iframe>
 ```
 
 ---
 
-## 🛠 Troubleshooting
+## ✨ Key Features
 
-* **Load errors**? Check `models/TumorModel.py` matches checkpoint shapes.
-* **Drive download fails**? Ensure links are public; test with:
+✅ Tumor classification from MRI images
+✅ Glioma stage prediction from genetic data
+✅ Fully interactive Streamlit UI
+✅ Auto-downloading of large model files
+✅ Clean, modular, and extendable architecture
 
-  ```bash
-  gdown "https://drive.google.com/uc?id=1juQk4AhIi7u7I41uttCUpJYsvtsPyZUy"
-  ```
-* **Iframe blocked**? Verify `X-Frame-Options`; fallback to redirect page.
+---
+
+## 🔭 Future Enhancements
+
+* ✅ Hugging Face integration for model hosting
+* ⚙️ Backend APIs using FastAPI + Docker
+* 📊 Analytics dashboard for diagnostic insights
+* 📱 Mobile-friendly frontend
+* 🤖 Chatbot interaction using GPT
 
 ---
 
 ## 🤝 Contributing
 
-1. **Fork** it
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a **Pull Request**
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m "Add YourFeature"`
+4. Push to branch: `git push origin feature/YourFeature`
+5. Open a Pull Request
 
 ---
 
 ## 📝 License
 
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+Licensed under the **MIT License** – see `LICENSE` for details.
 
 ---
 
-<p align="center">
-  Built with ❤️ by **Salman Khan** — [@s4lmankhan](https://github.com/S4lmankhan)  
-</p>
+## ✉️ Contact
+
+**Salman Khan** • [@s4lmankhan](https://github.com/S4lmankhan)
+📧 [redhawk112233@gmail.com](mailto:redhawk112233@gmail.com)
+
+---
+
+*Disclaimer: For research and educational use only—not intended for clinical diagnosis.*
+
+```
+
+---
+
+### ✅ How to Use
+
+1. **Create** a folder `images/` in your repository.
+2. **Add** your own banner screenshot, demo screenshot, and banners there.
+3. **Save** the above markdown as `README.md`.
+4. **Commit and push** to GitHub.
+
+This style carries your friend’s clean layout, clear sections, and rich content—while spotlighting **your Streamlit version** and maintaining your codebase intact.
+::contentReference[oaicite:0]{index=0}
+```
