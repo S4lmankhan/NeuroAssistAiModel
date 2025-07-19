@@ -2,8 +2,8 @@
 
 **Advanced Brain Tumor Detection & Glioma Stage Prediction**  
 
-🚀 <span style="background-color: #FFEB3B; padding: 2px 6px; border-radius: 4px;">**Main App**: [neuroassistai.vercel.app](https://neuroassistai.vercel.app/)</span>  
-🌐 [🔗 **OR Try it on Streamlit**](https://neuroassist.streamlit.app/)
+🚀 **[Main Site (Vercel Deployment)](https://neuroassistai.vercel.app/)**  
+🌐 **[Try it on Streamlit](https://neuroassist.streamlit.app/)**
 
 ---
 
