@@ -1,14 +1,33 @@
-# 🧠 NeuroAssistAIModel
+# 🧠 NeuroAssist AI
 
 **Advanced Brain Tumor Detection & Glioma Stage Prediction**  
 _Deployed on Streamlit & Vercel_
 
 [🔗 **Run Live on Streamlit**](https://s4lmankhan-neuroassistaimodel.streamlit.app) •  
-[🔗 **Embed on Vercel Site**](https://neuroassistai.vercel.app/)
+<span style="background-color: #FFEB3B; padding: 2px 6px; border-radius: 4px;">🚀 **Main Site (Vercel)**: [neuroassistai.vercel.app](https://neuroassistai.vercel.app/)</span>
 
 ---
 
-## 📌 Overview
+## 📑 Contents
+
+1. [Overview](#overview)  
+2. [End‑to‑End Pipeline](#end‑to‑end-pipeline)  
+3. [Why NeuroAssistAI?](#why-neuroassistai)  
+4. [Research Basis](#research-basis)  
+5. [Dataset](#dataset)  
+6. [Model Architectures](#model-architectures)  
+7. [Download Pretrained Models](#download-pretrained-models)  
+8. [Tech Stack](#tech-stack)  
+9. [Project Structure](#project-structure)  
+10. [Installation & Local Run](#installation--local-run)  
+11. [Embedding](#embedding)  
+12. [Contributing](#contributing)  
+13. [License](#license)  
+14. [Contact](#contact)  
+
+---
+
+## Overview
 
 **NeuroAssistAIModel** is a two‑stage diagnostic pipeline that brings AI‑powered brain tumor analysis to your browser:
 
@@ -18,11 +37,11 @@ _Deployed on Streamlit & Vercel_
 2. **Glioma Stage Prediction**  
    A compact **ANN** predicts glioma stage (I–IV) from gene‑mutation inputs.
 
-Built in **PyTorch**, presented via **Streamlit**, and embeddable in any site (e.g. [our Vercel front‑end](https://neuroassistai.vercel.app/)).
+Built in **PyTorch**, presented via **Streamlit**, and embeddable in any site (e.g. our [Vercel front‑end](https://neuroassistai.vercel.app/)).
 
 ---
 
-## 🔄 End‑to‑End Pipeline
+## End‑to‑End Pipeline
 
 ```mermaid
 flowchart LR
@@ -42,7 +61,7 @@ flowchart LR
 
 ---
 
-## 🎯 Why NeuroAssistAI?
+## Why NeuroAssistAI?
 
 * **Clinically Inspired**: Mirrors real diagnostic workflows.
 * **Zero‑Install**: Models auto‑download from Google Drive at first run.
@@ -54,7 +73,7 @@ flowchart LR
 
 ---
 
-## 📚 Research Basis
+## Research Basis
 
 Inspired by the study
 
@@ -63,7 +82,7 @@ Inspired by the study
 
 ---
 
-## 📂 Dataset
+## Dataset
 
 * **Source**: [Kaggle Brain Tumor Dataset](https://www.kaggle.com/datasets)
 * **Classes**: `Glioma`, `Meningioma`, `Pituitary`, `No Tumor`
@@ -71,7 +90,7 @@ Inspired by the study
 
 ---
 
-## 🧠 Model Architectures
+## Model Architectures
 
 ### 🔷 CNN – Tumor Type Detection
 
@@ -92,9 +111,9 @@ Inspired by the study
 
 ---
 
-## 💾 Download Pretrained Models
+## Download Pretrained Models
 
-Due to GitHub’s 100 MB limit, download the TumorDetection model externally:
+Due to GitHub’s 100 MB limit, download the Tumor Detection model externally:
 
 * **TumorClassification (CNN)**
   [Download BTD\_model.pth](https://drive.google.com/uc?export=download&id=1juQk4AhIi7u7I41uttCUpJYsvtsPyZUy)
@@ -112,7 +131,7 @@ models/glioma_stages.pth
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Category      | Tools / Libraries                    |
 | ------------- | ------------------------------------ |
@@ -125,7 +144,7 @@ models/glioma_stages.pth
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 NeuroAssistAIModel/
@@ -144,7 +163,7 @@ NeuroAssistAIModel/
 
 ---
 
-## 🚀 Installation & Local Run
+## Installation & Local Run
 
 1. **Clone**
 
@@ -176,7 +195,7 @@ NeuroAssistAIModel/
 
 ---
 
-## 🔗 Embedding
+## Embedding
 
 Embed in your site via:
 
@@ -190,7 +209,7 @@ Embed in your site via:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork & clone
 2. Create a branch: `git checkout -b feat/YourFeature`
@@ -199,14 +218,15 @@ Embed in your site via:
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under **MIT**. See [LICENSE](LICENSE) for details.
 
 ---
 
-## ✉️ Contact
+## Contact
 
 **Salman Khan**
 📧 [redhawk112233@gmail.com](mailto:redhawk112233@gmail.com)
 🔗 [GitHub @s4lmankhan](https://github.com/S4lmankhan)
+
