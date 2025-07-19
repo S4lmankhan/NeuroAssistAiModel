@@ -1,10 +1,9 @@
 # 🧠 NeuroAssist AI
 
 **Advanced Brain Tumor Detection & Glioma Stage Prediction**  
-_Deployed on [Streamlit](https://neuroassist.streamlit.app/) & [**Main Web App**](https://neuroassistai.vercel.app/)_
 
 🚀 <span style="background-color: #FFEB3B; padding: 2px 6px; border-radius: 4px;">**Main App**: [neuroassistai.vercel.app](https://neuroassistai.vercel.app/)</span>  
-🌐 [🔗 **Run Live on Streamlit**](https://neuroassist.streamlit.app/)
+🌐 [🔗 **OR Try it on Streamlit**](https://neuroassist.streamlit.app/)
 
 ---
 
